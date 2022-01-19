@@ -1,0 +1,2 @@
+class IssuingBank < ApplicationRecord
+end
