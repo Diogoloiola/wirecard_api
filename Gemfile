@@ -30,6 +30,7 @@ group :development, :test do
   gem 'awesome_print', '~> 1.9', '>= 1.9.2'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec', '~> 3.10'
+  gem 'rspec-rails'
 end
 
 group :development do
