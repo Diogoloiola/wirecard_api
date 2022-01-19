@@ -1,4 +1,6 @@
 class IssuingBank < ApplicationRecord
-  has_many :cards
-  has_many :issuing_banks, through: :issuing_banks
+  has_many :issuing_bank_parts
+  has_many :cards, through: :issuing_bank_parts
+
+  validates :name, presence: true
 end
