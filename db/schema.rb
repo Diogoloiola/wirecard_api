@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_19_183549) do
+ActiveRecord::Schema.define(version: 2022_01_19_184658) do
 
   create_table "cards", force: :cascade do |t|
     t.string "holder_name"
@@ -34,6 +34,13 @@ ActiveRecord::Schema.define(version: 2022_01_19_183549) do
 
   create_table "issuing_banks", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.decimal "amount"
+    t.integer "type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
