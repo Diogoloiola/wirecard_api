@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_19_184658) do
+ActiveRecord::Schema.define(version: 2022_01_19_190040) do
 
   create_table "cards", force: :cascade do |t|
     t.string "holder_name"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2022_01_19_184658) do
     t.string "cvv"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
   create_table "issuing_bank_parts", force: :cascade do |t|
@@ -43,8 +45,20 @@ ActiveRecord::Schema.define(version: 2022_01_19_184658) do
     t.integer "type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_payments_on_user_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "cpf"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "cards", "users"
   add_foreign_key "issuing_bank_parts", "cards"
   add_foreign_key "issuing_bank_parts", "issuing_banks"
+  add_foreign_key "payments", "users"
 end
