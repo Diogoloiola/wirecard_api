@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2022_01_19_190040) do
 
   create_table "payments", force: :cascade do |t|
     t.decimal "amount"
-    t.integer "type"
+    t.integer "billing_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id", null: false
