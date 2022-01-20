@@ -31,6 +31,14 @@ module Admin
         @card.destroy
       end
 
+      def validate
+        if Card.find_by(cvv: params[:id])
+          render json: { "message": 'Cartão de crédito válido' }
+        else
+          render json: { "message": 'Cartão de crédito inválido' }
+        end
+      end
+
       private
 
       def set_card
@@ -38,7 +46,7 @@ module Admin
       end
 
       def card_params
-        params.fecth(:card).permit(:holder_name, :expiration, :cvv, :user_id)
+        params.require(:card).permit(:holder_name, :expiration, :cvv, :user_id)
       end
     end
   end
