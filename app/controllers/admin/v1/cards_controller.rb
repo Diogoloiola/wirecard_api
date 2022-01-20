@@ -32,11 +32,8 @@ module Admin
       end
 
       def validate
-        if Card.find_by(cvv: params[:id])
-          render json: { "message": 'Cartão de crédito válido' }
-        else
-          render json: { "message": 'Cartão de crédito inválido' }
-        end
+        @card = Card.find_by(cvv: params[:id])
+        render :result
       end
 
       private
