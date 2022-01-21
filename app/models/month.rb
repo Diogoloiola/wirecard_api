@@ -1,6 +1,8 @@
 class Month < ApplicationRecord
   belongs_to :year
 
+  has_many :payments
+
   enum month_code: {
     janeiro: 0,
     feveriro: 1,
