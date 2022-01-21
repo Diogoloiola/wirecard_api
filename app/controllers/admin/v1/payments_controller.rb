@@ -35,13 +35,14 @@ module Admin
       def generate_billing
         params = payment_params
         card = find_card(params[:card])
-        return { message: 'Cartão não encontrado na nossa base de dados' } if card.nil?
+        return render json: { message: 'Cartão não encontrado na nossa base de dados' } if card.nil?
 
         user = find_user(params[:buyer], params[:client_id])
 
-        return { message: 'Usuário não encontrado na nossa base de dados' } if user.nil?
+        return render json: { message: 'Usuário não encontrado na nossa base de dados' } if user.nil?
 
         @payment = create_payment(params[:payment], user.id)
+
         if @payment.save
           render :show, status: :created
         else
@@ -65,7 +66,13 @@ module Admin
       end
 
       def create_payment(payment, user_id)
-        Payment.new(amount: payment[:amount], billing_type: payment[:billing_type], user_id: user_id)
+        if payment[:billing_type]
+          # sleep(40.seconds)
+          Payment.new(amount: payment[:amount], billing_type: payment[:billing_type], user_id: user_id)
+        else
+          hash = Digest::SHA256.hexdigest("#{Time.zone.now}#{user_id}}")
+          Payment.new(amount: payment[:amount], billing_type: payment[:billing_type], user_id: user_id, code: hash)
+        end
       end
 
       def find_user(user, client_id)
