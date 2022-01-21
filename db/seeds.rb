@@ -17,5 +17,6 @@ end
 
   Card.create!(holder_name: user.name, number: Faker::Number.number(digits: 5),
                expiration: '20/10/2022', cvv: Faker::Number.number(digits: 5).to_s, user_id: user.id,
-               issuing_bank_id: issuing_bank.id)
+               issuing_bank_id: issuing_bank.id, balance: 2000, fixed_balance: 2000, 
+               invoice_due_date: (Time.zone.now + 1.month))
 end
