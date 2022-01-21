@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_21_012059) do
+ActiveRecord::Schema.define(version: 2022_01_21_012635) do
 
   create_table "cards", force: :cascade do |t|
     t.string "holder_name"
@@ -31,6 +31,14 @@ ActiveRecord::Schema.define(version: 2022_01_21_012059) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "months", force: :cascade do |t|
+    t.integer "month_code"
+    t.integer "year_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["year_id"], name: "index_months_on_year_id"
+  end
+
   create_table "payments", force: :cascade do |t|
     t.decimal "amount"
     t.integer "billing_type"
@@ -49,7 +57,14 @@ ActiveRecord::Schema.define(version: 2022_01_21_012059) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "years", force: :cascade do |t|
+    t.string "year"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "cards", "issuing_banks"
   add_foreign_key "cards", "users"
+  add_foreign_key "months", "years"
   add_foreign_key "payments", "users"
 end
