@@ -17,21 +17,12 @@ ActiveRecord::Schema.define(version: 2022_01_19_190040) do
     t.string "number"
     t.string "expiration"
     t.string "cvv"
+    t.integer "issuing_bank_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id", null: false
+    t.index ["issuing_bank_id"], name: "index_cards_on_issuing_bank_id"
     t.index ["user_id"], name: "index_cards_on_user_id"
-  end
-
-  create_table "issuing_bank_parts", force: :cascade do |t|
-    t.integer "card_id", null: false
-    t.integer "issuing_bank_id", null: false
-    t.boolean "status"
-    t.decimal "balance"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["card_id"], name: "index_issuing_bank_parts_on_card_id"
-    t.index ["issuing_bank_id"], name: "index_issuing_bank_parts_on_issuing_bank_id"
   end
 
   create_table "issuing_banks", force: :cascade do |t|
@@ -57,8 +48,7 @@ ActiveRecord::Schema.define(version: 2022_01_19_190040) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "cards", "issuing_banks"
   add_foreign_key "cards", "users"
-  add_foreign_key "issuing_bank_parts", "cards"
-  add_foreign_key "issuing_bank_parts", "issuing_banks"
   add_foreign_key "payments", "users"
 end

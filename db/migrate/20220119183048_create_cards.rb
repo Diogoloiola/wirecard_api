@@ -5,7 +5,7 @@ class CreateCards < ActiveRecord::Migration[6.1]
       t.string :number
       t.string :expiration
       t.string :cvv
-
+      t.references :issuing_bank, null: false, foreign_key: true
       t.timestamps
     end
   end
