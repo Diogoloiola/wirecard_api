@@ -1,6 +1,13 @@
 User.destroy_all
 Card.destroy_all
 IssuingBank.destroy_all
+Year.destroy_all
+
+year = Year.create!(year: '2020')
+
+12.times do |index|
+  Month.create!(month_code: index, year_id: year.id)
+end
 
 10.times do
   user = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.email,
