@@ -3,7 +3,7 @@ Card.destroy_all
 IssuingBank.destroy_all
 Year.destroy_all
 
-year = Year.create!(year: '2020')
+year = Year.create!(year: Time.zone.now.strftime('%Y'))
 
 12.times do |index|
   Month.create!(month_code: index, year_id: year.id)
