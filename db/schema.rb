@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_21_120811) do
+ActiveRecord::Schema.define(version: 2022_01_21_173612) do
 
   create_table "cards", force: :cascade do |t|
     t.string "holder_name"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2022_01_21_120811) do
     t.integer "user_id", null: false
     t.datetime "due_date"
     t.integer "month_id", null: false
-    t.integer "code"
+    t.string "code"
     t.index ["month_id"], name: "index_payments_on_month_id"
     t.index ["user_id"], name: "index_payments_on_user_id"
   end
