@@ -4,7 +4,9 @@ Rails.application.routes.draw do
       resources :cards do
         get 'validate', on: :member
       end
-      resources :users
+      resources :users do
+        get 'payments', on: :member
+      end
       resources :payments
       resources :issuing_banks
     end

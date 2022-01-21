@@ -31,6 +31,20 @@ module Admin
         @user.destroy
       end
 
+      def payments
+        final_date = params[:final_date]
+
+        return render json: { message: 'A data final é necessária' } if final_date.nil?
+
+        initia_date = if params[:inicial_date].nil?
+                        Payment.where(user_id: params[:id]).first.created_at
+                      else
+                        Date.parse(params[:inicial_date])
+                      end
+
+        @payments = Payment.where(created_at: initia_date..Date.parse(final_date))
+      end
+
       private
 
       def set_user
