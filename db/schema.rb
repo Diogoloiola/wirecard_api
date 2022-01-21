@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_21_173612) do
+ActiveRecord::Schema.define(version: 2022_01_21_175418) do
 
   create_table "cards", force: :cascade do |t|
     t.string "holder_name"
@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(version: 2022_01_21_173612) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id", null: false
+    t.datetime "invoice_due_date"
+    t.decimal "balance"
+    t.decimal "fixed_balance"
     t.index ["issuing_bank_id"], name: "index_cards_on_issuing_bank_id"
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
