@@ -9,16 +9,6 @@ module Admin
 
       def show; end
 
-      def create
-        @payment = Payment.new(payment_params)
-
-        if @payment.save
-          render :show, status: :created
-        else
-          render json: @payment.errors, status: :unprocessable_entity
-        end
-      end
-
       def update
         if @payment.update(payment_params)
           render :show, status: :ok
@@ -31,7 +21,7 @@ module Admin
         @payment.destroy
       end
 
-      def generate_billing # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+      def create # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         params = payment_params
         if params[:payment][:billing_type] == 1
           card = find_card(params[:card])
@@ -69,10 +59,11 @@ module Admin
         params = { amount: payment[:amount], billing_type: payment[:billing_type], user_id: user_id }
 
         if payment[:billing_type].zero?
-          hash = Digest::SHA256.hexdigest("#{Time.zone.now}#{user_id}}").slice(0, 5)
-          params = params.merge(code: hash.to_i)
+          hash = Digest::SHA256.hexdigest("#{Time.zone.now}#{user_id}}")
+
+          params = params.merge(code: hash.slice(0, 5))
         end
-        Payment.new(params)
+        Payment.new(params).define_payment_day
       end
 
       def find_user(user, client_id)

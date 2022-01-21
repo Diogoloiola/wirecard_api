@@ -5,9 +5,7 @@ Rails.application.routes.draw do
         get 'validate', on: :member
       end
       resources :users
-      resources :payments do
-        post 'generate_billing', on: :collection
-      end
+      resources :payments
       resources :issuing_banks
     end
   end
