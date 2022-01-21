@@ -6,4 +6,4 @@ json.user do
   json.email payment.user.email
 end
 
-json.hash_boleto json.payment.code unless payment.billing_type
+json.hash_boleto payment.code if payment.billing_type == 'boleto'

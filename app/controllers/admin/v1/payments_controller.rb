@@ -4,7 +4,7 @@ module Admin
       before_action :set_payment, only: %i[show update destroy]
 
       def index
-        @payments = Payment.all
+        @payments = Payment.includes(:month, :user).all
       end
 
       def show; end
@@ -31,12 +31,12 @@ module Admin
         @payment.destroy
       end
 
-      # rubocop:disable Metrics/MethodLength
-      def generate_billing
+      def generate_billing # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
         params = payment_params
-        card = find_card(params[:card])
-        return render json: { message: 'Cartão não encontrado na nossa base de dados' } if card.nil?
-
+        if params[:payment][:billing_type] == 1
+          card = find_card(params[:card])
+          return render json: { message: 'Cartão não encontrado na nossa base de dados' } if card.nil?
+        end
         user = find_user(params[:buyer], params[:client_id])
 
         return render json: { message: 'Usuário não encontrado na nossa base de dados' } if user.nil?
@@ -66,13 +66,13 @@ module Admin
       end
 
       def create_payment(payment, user_id)
-        if payment[:billing_type]
-          # sleep(40.seconds)
-          Payment.new(amount: payment[:amount], billing_type: payment[:billing_type], user_id: user_id)
-        else
-          hash = Digest::SHA256.hexdigest("#{Time.zone.now}#{user_id}}")
-          Payment.new(amount: payment[:amount], billing_type: payment[:billing_type], user_id: user_id, code: hash)
+        params = { amount: payment[:amount], billing_type: payment[:billing_type], user_id: user_id }
+
+        if payment[:billing_type].zero?
+          hash = Digest::SHA256.hexdigest("#{Time.zone.now}#{user_id}}").slice(0, 5)
+          params = params.merge(code: hash.to_i)
         end
+        Payment.new(params)
       end
 
       def find_user(user, client_id)
