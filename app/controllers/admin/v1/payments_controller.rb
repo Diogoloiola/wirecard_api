@@ -26,12 +26,16 @@ module Admin
         if params[:payment][:billing_type] == 1
           card = find_card(params[:card])
           return render json: { message: 'Cartão não encontrado na nossa base de dados' } if card.nil?
+
+          if card.check_limit(params[:payment][:amount])
+            return render json: { message: 'Você não possui mais limite disponivel no cartão' }
+          end
         end
         user = find_user(params[:buyer], params[:client_id])
 
         return render json: { message: 'Usuário não encontrado na nossa base de dados' } if user.nil?
 
-        @payment = create_payment(params[:payment], user.id)
+        @payment = create_payment(params[:payment], user.id, card)
 
         if @payment.save
           render :show, status: :created
@@ -55,7 +59,7 @@ module Admin
                      expiration: card[:expiration_date], cvv: card[:cvv])
       end
 
-      def create_payment(payment, user_id)
+      def create_payment(payment, user_id, card)
         params = { amount: payment[:amount], billing_type: payment[:billing_type], user_id: user_id }
 
         if payment[:billing_type].zero?
@@ -63,6 +67,9 @@ module Admin
 
           params = params.merge(code: hash.slice(0, 5))
         end
+
+        card.register_transaction(payment[:amount])
+        card.save
         Payment.new(params).define_payment_day
       end
 
