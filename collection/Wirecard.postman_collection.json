@@ -1,0 +1,2189 @@
+{
+	"info": {
+		"_postman_id": "7baca6e1-1f2c-4958-9a04-4c9c5147446e",
+		"name": "Wirecard",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "v1",
+			"item": [
+				{
+					"name": "card",
+					"item": [
+						{
+							"name": "validate credit_card",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/v1/cards/89060/validate",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"v1",
+										"cards",
+										"89060",
+										"validate"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "invalid credit card",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/admin/v1/cards/64146/validate",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"admin",
+												"v1",
+												"cards",
+												"64146",
+												"validate"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"b691b22b5fa786c664e015c4d2ed1b53\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "bc0c4958-e6ef-4d35-9687-e2cb4d665384"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.024475"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Cartão inválido\"\n}"
+								},
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/admin/v1/cards/89060/validate",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"admin",
+												"v1",
+												"cards",
+												"89060",
+												"validate"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"29ddbcf4052468859376fc674b7a5e75\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "252a2071-2c7b-4f1b-815d-80ced5c71f03"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.033902"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Cartão válido\",\n    \"issuer\": \"Dimple Bashirian\"\n}"
+								}
+							]
+						},
+						{
+							"name": "list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/v1/cards/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"v1",
+										"cards",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/admin/v1/cards/",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"admin",
+												"v1",
+												"cards",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"4059d04f05d1ea641e7632cab57d7d5b\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "2d34e731-f8e0-437c-8652-2d87f622ec68"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.011562"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": 1,\n        \"holder_name\": \"Andrew Schuppe\",\n        \"expiration\": \"20/10/2022\",\n        \"cvv\": \"28781\",\n        \"created_at\": \"2022-01-21T18:02:32.765Z\",\n        \"updated_at\": \"2022-01-21T18:02:32.765Z\"\n    },\n    {\n        \"id\": 2,\n        \"holder_name\": \"The Hon. Renato Boyle\",\n        \"expiration\": \"20/10/2022\",\n        \"cvv\": \"16461\",\n        \"created_at\": \"2022-01-21T18:02:32.860Z\",\n        \"updated_at\": \"2022-01-21T18:02:32.860Z\"\n    },\n    {\n        \"id\": 3,\n        \"holder_name\": \"China Kemmer\",\n        \"expiration\": \"20/10/2022\",\n        \"cvv\": \"96860\",\n        \"created_at\": \"2022-01-21T18:02:32.957Z\",\n        \"updated_at\": \"2022-01-21T18:02:32.957Z\"\n    },\n    {\n        \"id\": 4,\n        \"holder_name\": \"Mikel Grimes\",\n        \"expiration\": \"20/10/2022\",\n        \"cvv\": \"55657\",\n        \"created_at\": \"2022-01-21T18:02:33.106Z\",\n        \"updated_at\": \"2022-01-21T18:02:33.106Z\"\n    },\n    {\n        \"id\": 5,\n        \"holder_name\": \"Emmett Gorczany\",\n        \"expiration\": \"20/10/2022\",\n        \"cvv\": \"85654\",\n        \"created_at\": \"2022-01-21T18:02:33.185Z\",\n        \"updated_at\": \"2022-01-21T18:02:33.185Z\"\n    },\n    {\n        \"id\": 6,\n        \"holder_name\": \"Mrs. Leola Green\",\n        \"expiration\": \"20/10/2022\",\n        \"cvv\": \"56254\",\n        \"created_at\": \"2022-01-21T18:02:33.259Z\",\n        \"updated_at\": \"2022-01-21T18:02:33.259Z\"\n    },\n    {\n        \"id\": 7,\n        \"holder_name\": \"Nicol Gutkowski\",\n        \"expiration\": \"20/10/2022\",\n        \"cvv\": \"99659\",\n        \"created_at\": \"2022-01-21T18:02:33.335Z\",\n        \"updated_at\": \"2022-01-21T18:02:33.335Z\"\n    },\n    {\n        \"id\": 8,\n        \"holder_name\": \"Marybelle Veum\",\n        \"expiration\": \"20/10/2022\",\n        \"cvv\": \"95065\",\n        \"created_at\": \"2022-01-21T18:02:33.404Z\",\n        \"updated_at\": \"2022-01-21T18:02:33.404Z\"\n    },\n    {\n        \"id\": 9,\n        \"holder_name\": \"Clint Bode\",\n        \"expiration\": \"20/10/2022\",\n        \"cvv\": \"38589\",\n        \"created_at\": \"2022-01-21T18:02:33.478Z\",\n        \"updated_at\": \"2022-01-21T18:02:33.478Z\"\n    },\n    {\n        \"id\": 10,\n        \"holder_name\": \"Paige Champlin\",\n        \"expiration\": \"20/10/2022\",\n        \"cvv\": \"89060\",\n        \"created_at\": \"2022-01-21T18:02:33.553Z\",\n        \"updated_at\": \"2022-01-21T18:15:25.902Z\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"card\": {\n        \"holder_name\": \"Santiago Hyatt MD\",\n        \"expiration\": \"20/20/2022\" ,\n        \"cvv\": \"12321\",\n        \"user_id\": 61,\n        \"issuing_bank_id\": 61,\n        \"invoice_due_date\": \"20/20/2030\",\n        \"balance\": \"2000\",\n        \"fixed_balance\": \"2000\",\n        \"number\": \"12312\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/v1/cards/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"v1",
+										"cards",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "11"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"card\": {\n        \"holder_name\": \"Santiago Hyatt MD\",\n        \"expiration\": \"20/20/2022\" ,\n        \"cvv\": \"12321\",\n        \"user_id\": 61,\n        \"issuing_bank_id\": 61,\n        \"invoice_due_date\": \"20/20/2030\",\n        \"balance\": \"2000\",\n        \"fixed_balance\": \"2000\",\n        \"number\": \"12312\"\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/admin/v1/cards/",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"admin",
+												"v1",
+												"cards",
+												""
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"cb87eb37c4f56320af0343f0bb7caf9b\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "965cfd1d-a7f7-4bad-84d1-5a62177d5767"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.045594"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 11,\n    \"holder_name\": \"Santiago Hyatt MD\",\n    \"expiration\": \"20/20/2022\",\n    \"cvv\": \"12321\",\n    \"created_at\": \"2022-01-24T22:44:55.030Z\",\n    \"updated_at\": \"2022-01-24T22:44:55.030Z\"\n}"
+								},
+								{
+									"name": "422",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"card\": {\n        \"holder_name\": \"Santiago Hyatt MD\",\n        \"expiration\": \"20/20/2022\" ,\n        \"cvv\": \"12321\",\n        \"user_id\": 60,\n        \"issuing_bank_id\": 61,\n        \"invoice_due_date\": \"20/20/2030\",\n        \"balance\": \"2000\",\n        \"fixed_balance\": \"2000\",\n        \"number\": \"12312\"\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/admin/v1/cards/",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"admin",
+												"v1",
+												"cards",
+												""
+											]
+										}
+									},
+									"status": "Unprocessable Entity",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "98c09641-9ebe-446b-bb70-bd827ffe2957"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.017320"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"user\": [\n        \"must exist\"\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"card\": {\n        \"holder_name\": \"Santiago Hyatt MD\",\n        \"expiration\": \"20/20/2022\" ,\n        \"cvv\": \"12321\",\n        \"user_id\": 61,\n        \"issuing_bank_id\": 61,\n        \"invoice_due_date\": \"20/20/2030\",\n        \"balance\": \"2000\",\n        \"fixed_balance\": \"2000\",\n        \"number\": \"12312\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/v1/cards/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"v1",
+										"cards",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "11"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"card\": {\n        \"holder_name\": \"Santiago Hyatt MD\",\n        \"expiration\": \"20/20/2022\" ,\n        \"cvv\": \"12321\",\n        \"user_id\": 61,\n        \"issuing_bank_id\": 61,\n        \"invoice_due_date\": \"20/20/2030\",\n        \"balance\": \"2000\",\n        \"fixed_balance\": \"2000\",\n        \"number\": \"12312\"\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/admin/v1/cards/",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"admin",
+												"v1",
+												"cards",
+												""
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"cb87eb37c4f56320af0343f0bb7caf9b\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "965cfd1d-a7f7-4bad-84d1-5a62177d5767"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.045594"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 11,\n    \"holder_name\": \"Santiago Hyatt MD\",\n    \"expiration\": \"20/20/2022\",\n    \"cvv\": \"12321\",\n    \"created_at\": \"2022-01-24T22:44:55.030Z\",\n    \"updated_at\": \"2022-01-24T22:44:55.030Z\"\n}"
+								},
+								{
+									"name": "422",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"card\": {\n        \"holder_name\": \"Santiago Hyatt MD\",\n        \"expiration\": \"20/20/2022\" ,\n        \"cvv\": \"12321\",\n        \"user_id\": 60,\n        \"issuing_bank_id\": 61,\n        \"invoice_due_date\": \"20/20/2030\",\n        \"balance\": \"2000\",\n        \"fixed_balance\": \"2000\",\n        \"number\": \"12312\"\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/admin/v1/cards/",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"admin",
+												"v1",
+												"cards",
+												""
+											]
+										}
+									},
+									"status": "Unprocessable Entity",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "98c09641-9ebe-446b-bb70-bd827ffe2957"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.017320"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"user\": [\n        \"must exist\"\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"card\": {\n        \"holder_name\": \"Santiago Hyatt MD\",\n        \"expiration\": \"20/20/2022\" ,\n        \"cvv\": \"12321\",\n        \"user_id\": 60,\n        \"issuing_bank_id\": 61,\n        \"invoice_due_date\": \"20/20/2030\",\n        \"balance\": \"2000\",\n        \"fixed_balance\": \"2000\",\n        \"number\": \"12312\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/v1/cards/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"v1",
+										"cards",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"card\": {\n        \"holder_name\": \"Santiago Hyatt MD\",\n        \"expiration\": \"20/20/2022\" ,\n        \"cvv\": \"12321\",\n        \"user_id\": 61,\n        \"issuing_bank_id\": 61,\n        \"invoice_due_date\": \"20/20/2030\",\n        \"balance\": \"2000\",\n        \"fixed_balance\": \"2000\",\n        \"number\": \"12312\"\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/admin/v1/cards/",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"admin",
+												"v1",
+												"cards",
+												""
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"cb87eb37c4f56320af0343f0bb7caf9b\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "965cfd1d-a7f7-4bad-84d1-5a62177d5767"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.045594"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 11,\n    \"holder_name\": \"Santiago Hyatt MD\",\n    \"expiration\": \"20/20/2022\",\n    \"cvv\": \"12321\",\n    \"created_at\": \"2022-01-24T22:44:55.030Z\",\n    \"updated_at\": \"2022-01-24T22:44:55.030Z\"\n}"
+								},
+								{
+									"name": "422",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"card\": {\n        \"holder_name\": \"Santiago Hyatt MD\",\n        \"expiration\": \"20/20/2022\" ,\n        \"cvv\": \"12321\",\n        \"user_id\": 60,\n        \"issuing_bank_id\": 61,\n        \"invoice_due_date\": \"20/20/2030\",\n        \"balance\": \"2000\",\n        \"fixed_balance\": \"2000\",\n        \"number\": \"12312\"\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/admin/v1/cards/",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"admin",
+												"v1",
+												"cards",
+												""
+											]
+										}
+									},
+									"status": "Unprocessable Entity",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "98c09641-9ebe-446b-bb70-bd827ffe2957"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.017320"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"user\": [\n        \"must exist\"\n    ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "issuing bank",
+					"item": [
+						{
+							"name": "list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/v1/issuing_banks/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"v1",
+										"issuing_banks",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/admin/v1/issuing_banks/",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"admin",
+												"v1",
+												"issuing_banks",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"b0498f11f0550d05e7b6d3f8dbd438b6\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "38ffd9d0-0866-4862-a8cb-16556d202416"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.021695"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": 61,\n        \"name\": \"Darrin Vandervort\",\n        \"created_at\": \"2022-01-21T18:02:32.733Z\",\n        \"updated_at\": \"2022-01-21T18:02:32.733Z\"\n    },\n    {\n        \"id\": 62,\n        \"name\": \"Hal Kemmer\",\n        \"created_at\": \"2022-01-21T18:02:32.812Z\",\n        \"updated_at\": \"2022-01-21T18:02:32.812Z\"\n    },\n    {\n        \"id\": 63,\n        \"name\": \"Stephanie Gusikowski\",\n        \"created_at\": \"2022-01-21T18:02:32.899Z\",\n        \"updated_at\": \"2022-01-21T18:02:32.899Z\"\n    },\n    {\n        \"id\": 64,\n        \"name\": \"Clayton Williamson\",\n        \"created_at\": \"2022-01-21T18:02:33.077Z\",\n        \"updated_at\": \"2022-01-21T18:02:33.077Z\"\n    },\n    {\n        \"id\": 65,\n        \"name\": \"Jayson Daugherty\",\n        \"created_at\": \"2022-01-21T18:02:33.150Z\",\n        \"updated_at\": \"2022-01-21T18:02:33.150Z\"\n    },\n    {\n        \"id\": 66,\n        \"name\": \"Rev. Arthur Walker\",\n        \"created_at\": \"2022-01-21T18:02:33.226Z\",\n        \"updated_at\": \"2022-01-21T18:02:33.226Z\"\n    },\n    {\n        \"id\": 67,\n        \"name\": \"Mrs. Milda Legros\",\n        \"created_at\": \"2022-01-21T18:02:33.301Z\",\n        \"updated_at\": \"2022-01-21T18:02:33.301Z\"\n    },\n    {\n        \"id\": 68,\n        \"name\": \"Doreen Doyle\",\n        \"created_at\": \"2022-01-21T18:02:33.373Z\",\n        \"updated_at\": \"2022-01-21T18:02:33.373Z\"\n    },\n    {\n        \"id\": 69,\n        \"name\": \"Pres. Stewart Hyatt\",\n        \"created_at\": \"2022-01-21T18:02:33.448Z\",\n        \"updated_at\": \"2022-01-21T18:02:33.448Z\"\n    },\n    {\n        \"id\": 70,\n        \"name\": \"Dimple Bashirian\",\n        \"created_at\": \"2022-01-21T18:02:33.520Z\",\n        \"updated_at\": \"2022-01-21T18:02:33.520Z\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"issuing_bank\": {\n       \"name\": \"{{$randomFullName}}\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/v1/issuing_banks/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"v1",
+										"issuing_banks",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "61"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"issuing_bank\": {\n       \"name\": \"{{$randomFullName}}\"\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/admin/v1/issuing_banks/:id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"admin",
+												"v1",
+												"issuing_banks",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "61"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"e34bb6e8cc3ace11f35970db479a4e4b\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "ed1eb2b5-89c4-47ca-8845-efebd392dc27"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.028671"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 61,\n    \"name\": \"Marion Marvin\",\n    \"created_at\": \"2022-01-21T18:02:32.733Z\",\n    \"updated_at\": \"2022-01-24T22:51:38.978Z\"\n}"
+								}
+							]
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"card\": {\n        \"holder_name\": \"Santiago Hyatt MD\",\n        \"expiration\": \"20/20/2022\" ,\n        \"cvv\": \"12321\",\n        \"user_id\": 61,\n        \"issuing_bank_id\": 61,\n        \"invoice_due_date\": \"20/20/2030\",\n        \"balance\": \"2000\",\n        \"fixed_balance\": \"2000\",\n        \"number\": \"12312\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/v1/issuing_bank/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"v1",
+										"issuing_bank",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "71"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"issuing_bank\": {\n       \"name\": \"{{$randomFullName}}\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/v1/issuing_banks/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"v1",
+										"issuing_banks",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"issuing_bank\": {\n       \"name\": \"{{$randomFullName}}\"\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/admin/v1/issuing_banks/",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"admin",
+												"v1",
+												"issuing_banks",
+												""
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"05e439da4a34dbc64f6a2ec34268765b\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "f1a02447-79fb-4270-ab3b-dcafa286f586"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.027965"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 71,\n    \"name\": \"Lynne Nader\",\n    \"created_at\": \"2022-01-24T22:50:18.573Z\",\n    \"updated_at\": \"2022-01-24T22:50:18.573Z\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "search",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/v1/users/:id/payments",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"v1",
+										"users",
+										":id",
+										"payments"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "70"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "404",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/admin/v1/users/:id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"admin",
+												"v1",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "10"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"6714fcb2975086224ed6c7e21303f430\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "0eba6a08-edd6-4e9c-858b-4c9486fa23c7"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.073692"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Usuário não encontrado\"\n}"
+								},
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/admin/v1/users/:id/payments",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"admin",
+												"v1",
+												"users",
+												":id",
+												"payments"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "70"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1a8ea3cd9575e3f0c36cbcde53aab07c\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "8593db68-9732-4e8d-b284-483a171f9a8a"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.171385"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": 1,\n        \"billing_type\": \"credit_card\",\n        \"amount\": \"1000.0\",\n        \"due_date\": \"2022-02-21T23:59:59.999Z\",\n        \"created_at\": \"2022-01-21T18:15:11.259Z\",\n        \"updated_at\": \"2022-01-21T18:15:11.259Z\",\n        \"user\": {\n            \"name\": \"Paige Champlin\",\n            \"cpf\": \"45480403492\",\n            \"email\": \"bryanna.leannon@stark.co\"\n        }\n    },\n    {\n        \"id\": 2,\n        \"billing_type\": \"credit_card\",\n        \"amount\": \"1000.0\",\n        \"due_date\": \"2022-02-21T23:59:59.999Z\",\n        \"created_at\": \"2022-01-21T18:15:25.930Z\",\n        \"updated_at\": \"2022-01-21T18:15:25.930Z\",\n        \"user\": {\n            \"name\": \"Paige Champlin\",\n            \"cpf\": \"45480403492\",\n            \"email\": \"bryanna.leannon@stark.co\"\n        }\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user\": {\n        \"name\": \"{{$randomFullName}}\",\n        \"email\": \"{{$randomEmail}}\",\n        \"cpf\": \"638.005.550-93\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/v1/users/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"v1",
+										"users",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"user\": {\n        \"name\": \"{{$randomFullName}}\",\n        \"email\": \"{{$randomEmail}}\",\n        \"cpf\": \"638.005.550-93\"\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/admin/v1/users/",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"admin",
+												"v1",
+												"users",
+												""
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"7f6155ab5e69ffa810ba741dee378034\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "c6acc96f-504a-4b54-bed1-475222303ff4"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.031434"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 71,\n    \"name\": \"Nadine Wisozk\",\n    \"email\": \"Thalia42@hotmail.com\",\n    \"cpf\": \"638.005.550-93\",\n    \"created_at\": \"2022-01-24T22:32:19.773Z\",\n    \"updated_at\": \"2022-01-24T22:32:19.773Z\"\n}"
+								}
+							]
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user\": {\n        \"name\": \"{{$randomFullName}}\",\n        \"email\": \"{{$randomEmail}}\",\n        \"cpf\": \"638.005.550-93\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/v1/users/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"v1",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "61"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "update",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"user\": {\n        \"name\": \"{{$randomFullName}}\",\n        \"email\": \"{{$randomEmail}}\",\n        \"cpf\": \"638.005.550-93\"\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/admin/v1/users/:id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"admin",
+												"v1",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "61"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"5ae7bf555f74d2d1ddbec3e2b4209aae\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "d92fb765-acfb-4145-afa8-762cd1f03760"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.036953"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 61,\n    \"name\": \"Santiago Hyatt MD\",\n    \"email\": \"Milan50@hotmail.com\",\n    \"cpf\": \"638.005.550-93\",\n    \"created_at\": \"2022-01-21T18:02:32.696Z\",\n    \"updated_at\": \"2022-01-24T22:34:09.420Z\"\n}"
+								}
+							]
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user\": {\n        \"name\": \"{{$randomFullName}}\",\n        \"email\": \"{{$randomEmail}}\",\n        \"cpf\": \"638.005.550-93\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/v1/users/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"v1",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "61"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "update",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"user\": {\n        \"name\": \"{{$randomFullName}}\",\n        \"email\": \"{{$randomEmail}}\",\n        \"cpf\": \"638.005.550-93\"\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/admin/v1/users/:id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"admin",
+												"v1",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "61"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"5ae7bf555f74d2d1ddbec3e2b4209aae\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "d92fb765-acfb-4145-afa8-762cd1f03760"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.036953"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 61,\n    \"name\": \"Santiago Hyatt MD\",\n    \"email\": \"Milan50@hotmail.com\",\n    \"cpf\": \"638.005.550-93\",\n    \"created_at\": \"2022-01-21T18:02:32.696Z\",\n    \"updated_at\": \"2022-01-24T22:34:09.420Z\"\n}"
+								}
+							]
+						},
+						{
+							"name": "payment",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/v1/users/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"v1",
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "70"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "404",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/admin/v1/users/:id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"admin",
+												"v1",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "71"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"6714fcb2975086224ed6c7e21303f430\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "769772ef-548a-48b6-b5d8-640726f184f1"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.008295"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Usuário não encontrado\"\n}"
+								},
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/admin/v1/users/:id",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"admin",
+												"v1",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "70"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"740bfcf837550575a0679fdfd6d824b1\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "f9c8632d-dc3c-41a9-9a3d-4452891e80b8"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.010192"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 70,\n    \"name\": \"Paige Champlin\",\n    \"email\": \"bryanna.leannon@stark.co\",\n    \"cpf\": \"45480403492\",\n    \"created_at\": \"2022-01-21T18:02:33.500Z\",\n    \"updated_at\": \"2022-01-21T18:02:33.500Z\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "payments",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"payment\": {\n        \"client_id\": \"70\",\n        \"buyer\": {\n            \"name\": \"Paige Champlin\",\n            \"email\": \"bryanna.leannon@stark.co\",\n            \"cpf\": \"45480403492\"\n        },\n        \"card\": {\n            \"holder_name\": \"Paige Champlin\",\n            \"number\": \"37596\",\n            \"expiration_date\": \"20/10/2022\",\n            \"cvv\": \"89060\" \n        },\n        \"payment\": {\n            \"amount\": 1000,\n            \"billing_type\": 1\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/v1/payments/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"v1",
+										"payments",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"payment\": {\n        \"client_id\": \"14\",\n        \"buyer\": {\n            \"name\": \"Tomiko Olson\",\n            \"email\": \"lauri@streich-ondricka.name\",\n            \"cpf\": \"67641115181\"\n        },\n        \"card\": {\n            \"holder_name\": \"Tomiko Olson\",\n            \"number\": \"11870\",\n            \"expiration_date\": \"20/10/2022\",\n            \"cvv\": \"58846\" \n        },\n        \"payment\": {\n            \"amount\": 1000,\n            \"billing_type\": 1\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/v1/payments/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"v1",
+										"payments",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
