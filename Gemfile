@@ -28,7 +28,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'awesome_print', '~> 1.9', '>= 1.9.2'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'faker', '~> 2.19'
   gem 'rspec', '~> 3.10'
   gem 'rspec-rails'
   gem 'sqlite3', '~> 1.4'
@@ -50,6 +49,6 @@ end
 group :production do
   gem 'pg', '~> 1.3'
 end
-
+gem 'faker', '~> 2.19'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
