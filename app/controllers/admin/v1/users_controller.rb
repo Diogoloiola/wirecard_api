@@ -4,7 +4,7 @@ module Admin
       before_action :set_user, only: %i[show update destroy]
 
       def index
-        @users = User.all
+        @users = User.includes([:payments])
       end
 
       def show; end
@@ -32,9 +32,7 @@ module Admin
       end
 
       def payments
-        final_date = params[:final_date]
-
-        return render json: { message: 'A data final é necessária' } if final_date.nil?
+        final_date = params[:final_date] || Time.zone.now
 
         initia_date = if params[:inicial_date].nil?
                         Payment.where(user_id: params[:id]).first.created_at
@@ -42,13 +40,15 @@ module Admin
                         Date.parse(params[:inicial_date])
                       end
 
-        @payments = Payment.where(created_at: initia_date..Date.parse(final_date))
+        @payments = Payment.where(created_at: initia_date..final_date)
       end
 
       private
 
       def set_user
         @user = User.find(params[:id])
+      rescue StandardError
+        render json: { message: 'Usuário não encontrado' }
       end
 
       def user_params
