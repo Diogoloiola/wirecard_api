@@ -3,6 +3,8 @@ class Month < ApplicationRecord
 
   has_many :payments
 
+  validates :month_code, presence: true
+
   enum month_code: {
     janeiro: 0,
     feveriro: 1,

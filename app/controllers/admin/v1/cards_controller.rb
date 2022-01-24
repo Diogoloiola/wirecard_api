@@ -13,7 +13,7 @@ module Admin
         @card = Card.new(card_params)
 
         if @card.save
-          render :show, status: :created, location: @card
+          render :show, status: :created
         else
           render json: @card.errors, status: :unprocessable_entity
         end
@@ -21,7 +21,7 @@ module Admin
 
       def update
         if @card.update(card_params)
-          render :show, status: :ok, location: @card
+          render :show, status: :ok
         else
           render json: @card.errors, status: :unprocessable_entity
         end
@@ -43,7 +43,8 @@ module Admin
       end
 
       def card_params
-        params.require(:card).permit(:holder_name, :expiration, :cvv, :user_id)
+        params.require(:card).permit(:holder_name, :expiration, :cvv, :user_id, :issuing_bank_id, :invoice_due_date,
+                                     :balance, :fixed_balance, :number)
       end
     end
   end

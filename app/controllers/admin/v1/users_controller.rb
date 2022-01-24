@@ -52,7 +52,7 @@ module Admin
       end
 
       def user_params
-        params.fecht(:user).permit(:name, :cpf, :email)
+        params.require(:user).permit(:name, :cpf, :email)
       end
     end
   end
