@@ -12,9 +12,17 @@ class Payment < ApplicationRecord
 
     month = actual_date.strftime('%m').to_i - 1
     year = actual_date.strftime('%Y')
-
     self.due_date = (actual_date + 1.month).end_of_day
-    self.month_id = Month.joins(:year).find_by('year.year': year, month_code: month).id
+
+    self.month_id = month_for_payment(year, month)
     self
+  end
+
+  private
+
+  def month_for_payment(year, month)
+    Year.create_year_and_months if Month.count.zero? || Year.count.zero?
+
+    Month.joins(:year).find_by('year.year': year, month_code: month).id
   end
 end

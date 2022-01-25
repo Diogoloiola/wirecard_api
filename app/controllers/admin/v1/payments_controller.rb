@@ -25,15 +25,22 @@ module Admin
         params = payment_params
         if params[:payment][:billing_type] == 1
           card = find_card(params[:card])
-          return render json: { message: 'Cartão não encontrado na nossa base de dados' } if card.nil?
+          if card.nil?
+            return render json: { message: 'Cartão não encontrado na nossa base de dados' },
+                          status: :unprocessable_entity
+          end
 
           if card.check_limit(params[:payment][:amount])
-            return render json: { message: 'Você não possui mais limite disponivel no cartão' }
+            return render json: { message: 'Você não possui mais limite disponivel no cartão' },
+                          status: :unprocessable_entity
           end
         end
         user = find_user(params[:buyer], params[:client_id])
 
-        return render json: { message: 'Usuário não encontrado na nossa base de dados' } if user.nil?
+        if user.nil?
+          return render json: { message: 'Usuário não encontrado na nossa base de dados' },
+                        status: :unprocessable_entity
+        end
 
         @payment = create_payment(params[:payment], user.id, card)
 
