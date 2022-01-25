@@ -49,5 +49,5 @@ A pasta collection possui um json que pode ser importado no postman, onde pode s
 
 ## Api em produção
 
-Clique <a href="">aqui</a> para acessar api.
+Clique <a href="https://wirecardtestapi.herokuapp.com/admin/v1/users">aqui</a> para acessar api.
 
